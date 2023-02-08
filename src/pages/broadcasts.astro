@@ -28,13 +28,6 @@ const videos = data.items.map(
     return { videoId, title, description, thumbnail, date };
   }
 );
-
-// show the oldest videos posted first using the date
-videos.sort((a: { date: any }, b: { date: any }) => {
-  return new Date(a.date).valueOf() - new Date(b.date).valueOf();
-});
-
-videos.reverse();
 ---
 
 <Layout title="Broadcasts">

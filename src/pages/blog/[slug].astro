@@ -19,7 +19,13 @@ const { Content } = await entry.render();
 
 <Layout title={entry.data.title}>
   <Container>
-    <div class="mx-auto max-w-[735px] mt-14">
+    <img
+      src={entry.data.image}
+      alt={entry.data.imageAlt}
+      class="w-full rounded-md"
+    />
+
+    <div class="mx-auto prose prose-lg mt-12">
       <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
         {entry.data.category}
       </span>
@@ -49,13 +55,13 @@ const { Content } = await entry.render();
     </div>
 
     <div class="mx-auto prose prose-lg mt-6">
-        <Content />
+      <Content />
     </div>
     <div class="text-center mt-8">
       <a
         href="/blog"
         class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
-        >← Back to Blog</a
+        ><button>← Back to Blog</button></a
       >
     </div>
   </Container>

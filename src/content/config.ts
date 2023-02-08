@@ -7,14 +7,14 @@ const blogCollection = defineCollection({
     draft: z.boolean(),
     title: z.string(),
     snippet: z.string(),
-    image: z.object({
-      src: z.string(),
-      alt: z.string(),
-    }),
-    publishDate: z.string().transform(str => new Date(str)),
-    author: z.string().default('Astroship'),
-    category: z.string(),
-    tags: z.array(z.string()),
+  //  Make the image a string if not a object
+    image: z.string().optional().default(''),
+    imageAlt: z.string().optional().default('Blog Image'),
+    body: z.string().optional(),
+    publishDate: z.string().transform((str: string | number | Date) => new Date(str)) ,
+    author: z.string().default('KnightTimes'),
+    category: z.string().default('News').optional(),
+    tags: z.array(z.string()).default([]).optional(),
   }),
 });
 
@@ -27,7 +27,7 @@ const teamCollection = defineCollection({
       src: z.string(),
       alt: z.string(),
     }),
-    publishDate: z.string().transform(str => new Date(str)),
+    publishDate: z.string().transform((str: string | number | Date) => new Date(str)),
   }),
 });
 
