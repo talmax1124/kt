@@ -1,0 +1,80 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+import "index.css";
+
+const playlistId = "PLWoJ8lk-542jI-wk94JocX9pvGWIJ8tnt";
+const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=AIzaSyDVxhfgWbHcodLfRKNQSosC2ppjbwMGxAE`;
+const response = await fetch(url);
+const data = await response.json();
+
+const videos = data.items.map(
+  (item: {
+    snippet: {
+      resourceId: { videoId: any };
+      title: any;
+      description: any;
+      thumbnails: { high: { url: any } };
+      publishedAt: any;
+    };
+  }) => {
+    const videoId = item.snippet.resourceId.videoId;
+    const title = item.snippet.title;
+    const description = item.snippet.description;
+    const thumbnail = item.snippet.thumbnails.high.url;
+    const date = item.snippet.publishedAt;
+    return { videoId, title, description, thumbnail, date };
+  }
+);
+
+// show the oldest videos posted first using the date
+videos.sort((a: { date: any }, b: { date: any }) => {
+  return new Date(a.date).valueOf() - new Date(b.date).valueOf();
+});
+
+videos.reverse();
+---
+
+<Layout title="Broadcasts">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Broadcasts</Fragment>
+      <Fragment slot="desc">
+        Watch the latest broadcasts from the our club.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-5">
+      {
+        videos.map(
+          (video: {
+            thumbnail: string | null | undefined;
+            title: unknown;
+            description: unknown;
+            videoId: any;
+          }) => (
+            <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+              <div class="flex-shrink-0">
+                <img class=" w-full" src={video.thumbnail} alt="" />
+              </div>
+              <div class="flex-1 p-6 bg-white dark:bg-gray-800">
+                <h3 class="text-xl font-semibold leading-tight  text-white">
+                  {video.title}
+                </h3>
+              </div>
+              <div class="flex-shrink-0 p-6 bg-white dark:bg-gray-800">
+                <a
+                  href={`https://www.youtube.com/watch?v=${video.videoId}`}
+                  class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                  Watch
+                </a>
+              </div>
+            </div>
+          )
+        )
+      }
+    </div>
+  </Container>
+</Layout>

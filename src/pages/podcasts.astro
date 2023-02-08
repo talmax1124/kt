@@ -1,0 +1,89 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+import "index.css";
+
+const playlistId = "PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww";
+const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=AIzaSyDVxhfgWbHcodLfRKNQSosC2ppjbwMGxAE`;
+const response = await fetch(url);
+const data = await response.json();
+
+const videos = data.items.map(
+  (item: {
+    snippet: {
+      resourceId: { videoId: any };
+      title: any;
+      description: any;
+      thumbnails: { high: { url: any } };
+      publishedAt: any;
+    };
+  }) => {
+    const videoId = item.snippet.resourceId.videoId;
+    const title = item.snippet.title;
+    const description = item.snippet.description;
+    const thumbnail = item.snippet.thumbnails.high.url;
+    const date = item.snippet.publishedAt;
+    return { videoId, title, description, thumbnail, date };
+  }
+);
+
+videos.reverse();
+---
+
+<Layout title="Podcasts">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Podcasts</Fragment>
+      <Fragment slot="desc">
+        Listen in to our insights with our podcast, Know The Neo
+      </Fragment>
+    </Sectionhead>
+    <div class="flex justify-between">
+      <a
+        href="https://skills-store.amazon.com/deeplink/dp/B08RXPPM8W?deviceType=app&share&refSuffix=ss_copy"
+        target="_blank"
+        class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+        <button>Enable Alexa Skill</button>
+      </a>
+      <a href="https://anchor.fm/knowtheneo" target="_blank">
+        <button
+          class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+          Listen On Anchor
+        </button>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-5">
+      {
+        videos.map(
+          (video: {
+            thumbnail: string | null | undefined;
+            title: unknown;
+            description: unknown;
+            videoId: any;
+          }) => (
+            <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+              <div class="flex-shrink-0">
+                <img class=" w-full" src={video.thumbnail} alt="" />
+              </div>
+              <div class="flex-1 p-6 bg-white dark:bg-gray-800">
+                <h3 class="text-xl font-semibold leading-tight  text-white">
+                  {video.title}
+                </h3>
+              </div>
+              <div class="flex-shrink-0 p-6 bg-white dark:bg-gray-800">
+                <a
+                  href={`https://www.youtube.com/watch?v=${video.videoId}`}
+                  class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                  Watch
+                </a>
+              </div>
+            </div>
+          )
+        )
+      }
+    </div>
+  </Container>
+</Layout>

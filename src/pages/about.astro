@@ -18,45 +18,126 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       <Fragment slot="desc">We are a small passionate team.</Fragment>
     </Sectionhead>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
-      </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
-      </p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      {
-        publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Picture
-                src={teamMemberEntry.data.avatar.src}
-                alt={teamMemberEntry.data.avatar.alt}
-                sizes="(max-width: 800px) 100vw, 400px"
-                widths={[200, 400]}
-                aspectRatio="1:1"
-                background="#ffffff"
-                fit="cover"
-                position="center"
-                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
-              />
-            </div>
+    <h2 class="font-bold mb-3 text-3xl">Who & What Are We?</h2>
+    <p>
+      We want to bring a News club to the students of NeoCity where they can
+      receive monthly news from the school. The newspaper will raise awareness
+      for important purchases, such as tickets for HOCO, that would fund the
+      school and get more people to be involved with events. The newspaper would
+      promote events such as HOCO, tournaments, competitions, and club events.
+      Students will be able to enjoy a source of quality content every month as
+      a summary, reminder, or entertainment for the school. By understanding the
+      struggles of running a club where students would forget meetings or become
+      unaware of club activities, we have created a place for us to view the
+      club meeting times and current projects. We believe this would give more
+      opportunities for students to join clubs they are passionate about. A
+      newspaper would also create a way for students to bond and be more
+      inclusive. A source of entertainment would not only bring the whole school
+      together but would promote positive interactions between students.
+    </p>
 
-            <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">
-                {teamMemberEntry.data.name}
-              </h2>
-              <h3 class="text-sm text-slate-500">
-                {teamMemberEntry.data.title}
-              </h3>
-            </div>
-          </div>
-        ))
-      }
+    <h2 class="mb-2 mt-2 font-medium">Club Goals</h2>
+    <br />
+    <div class="goals" data-aos="fade-up" data-aos-delay="460">
+      <ul>
+        <li>Four (4) Arts & Entertainment Articles</li>
+        <li>Four (4) Feature Articles</li>
+        <li>Four (4) Insights Articles</li>
+        <li>Four (4) News Articles</li>
+        <br />
+        <li>Goal: 20 total articles per semester</li>
+        <li>Goal: 40 total articles by the end of the school year</li>
+      </ul>
     </div>
+
+    <h2 class="mb-2 mt-2 font-medium">Description Of Each Category</h2>
+    <br />
+    <ul
+      class="desc"
+      style="list-style:none;"
+      data-aos="fade-up"
+      data-aos-delay="460">
+      <li>
+        <h3>News:</h3>
+        <br />
+      </li>
+      <li>
+        The “News” section will promote important school events such as open
+        house, yearly homecomings, spring dances, tournament of the knights
+        (Tok), movie nights, testing dates, scholarship opportunities, and
+        deadlines for college applications or event purchases. Students would
+        have access to a trustworthy site where they could browse through the
+        most crucial updates they tend to miss when passing by hallway posters.
+        Therefore, the “News” section will aid the students and staff of NeoCity
+        by serving as a biweekly breakdown/announcement.
+      </li>
+      <br />
+      <li>
+        <h3>Arts & Entertainment:</h3>
+        <br />
+      </li>
+      <li>
+        The “Arts and Entertainment” section proudly presents the creative sides
+        of the students at NeoCity Academy. Impressive projects would be laid
+        out on the page to show others the thought process behind the
+        outstanding efforts. Students may even send in their proudest work from
+        their portfolio to show the whole school. To create a fun and social
+        environment, this section would also include top movie, tiktoks, or song
+        recommendations.
+      </li>
+      <br />
+
+      <li>
+        <h3>Features</h3>
+        <br />
+      </li>
+      <li>
+        The “features” section is dedicated to featuring clubs and teams that
+        have either created extraordinary work, partook in a school, county,
+        state-wide competition, or were selected by the school to represent
+        NeoCity. The goal of featuring a specific team or person is to show
+        recognition for the efforts that usually go unnoticed. It would also
+        help other clubs document their accomplishments needed to sustain their
+        club. Since a new class of freshman enter NeoCity every year, the
+        features section can be a way to introduce the various clubs/interest at
+        the school.
+      </li>
+      <br />
+      <h3 class="text-2xl">Insights:</h3>
+      <br />
+    </ul>
+    <li>
+      The “insights” section will serve as an outlet for the opinions of the
+      students, teachers, or admin of the school. Often, the voices of the
+      students are unheard unless they are brought to attention on a school
+      website. Students would have the option to interact with the news club
+      through opinions as well. For instance, giving their own perspective on an
+      issue, event, competition, or their experience as part of a team. The
+      opinions give a human touch to the newspaper.
+    </li>
+    <br />
+    <br />
+    <h2 class="text-2xl">Broadcastings</h2>
+    <br />
+
+    <p>
+      Broadcastings are short 1-5 minute videos about clubs, events, and
+      information about NeoCity Academy. Broadcastings are available on Youtube
+      currently. This is our only platform available to host until now. You can
+      see it as well on our homepage or the broadcast page found in the
+      navigation bar.
+    </p>
+
+    <br />
+    <h2 class="text-2xl">Podcasts</h2>
+    <br />
+    <p>
+      Podcasts are audio versions of the broadcastings. We currently have all of
+      our broadcasts available on all of the platform services such as Google
+      Podcasts, Apple Podcast, Spotify, Amazon Alexa Flash Briefing Skill, and
+      more. You can find out more on <a
+        href="https://anchor.fm/knight-times-news">Anchor</a
+      >.
+    </p>
   </Container>
 </Layout>

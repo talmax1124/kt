@@ -1,0 +1,65 @@
+---
+import "index.css";
+
+const playlistId = "PLWoJ8lk-542jI-wk94JocX9pvGWIJ8tnt";
+const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=AIzaSyDVxhfgWbHcodLfRKNQSosC2ppjbwMGxAE`;
+const response = await fetch(url);
+const data = await response.json();
+
+const LastVideoId = data.items[1].snippet.resourceId.videoId;
+const LastVideoUrl = `https://www.youtube.com/watch?v=${LastVideoId}`;
+
+const LastVideoTitle = data.items[1].snippet.title;
+const LastVideoImage = data.items[1].snippet.thumbnails.maxres.url;
+---
+
+<style lang="scss">
+  .youtubeCard {
+    width: 100%;
+    display: flex;
+    margin-top: 3em;
+    .left {
+      width: 100%;
+      img {
+        width: 90%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .right {
+      width: 100%;
+      padding-left: 1em;
+      h3 {
+        font-size: 1.5em;
+        font-weight: 600;
+        margin-bottom: 0.5em;
+      }
+      p {
+        font-size: 1em;
+        font-weight: 400;
+        margin-bottom: 0.5em;
+      }
+
+      button {
+        animation: 0.2s ease-in-out;
+        transition: 0.2s ease-in-out;
+      }
+    }
+  }
+</style>
+
+<div class="youtubeCard bg-slate-200 p-3 rounded-md">
+  <div>
+    <img src={LastVideoImage} alt={LastVideoTitle} class="rounded-md left" />
+  </div>
+  <div class="right">
+    <h3>{LastVideoTitle}</h3>
+    <a href={LastVideoUrl} target="_blank" rel="noopener noreferrer"
+      ><button
+        class="btn px-4 py-3 bg-black text-white rounded-md mt-2 hover:bg-slate-700"
+        >Watch Our Latest Broadcast</button
+      ></a
+    >
+  </div>
+</div>
