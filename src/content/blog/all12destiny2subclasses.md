@@ -8,7 +8,7 @@ publishDate: "2023-01-09"
 tags:
   - post
   - ae
-image: https://d33wubrfki0l68.cloudfront.net/bdc2b36c3c55fe36b84f12b4527f22c3cfcf4ab1/a7bb3/assets/blog/destiny.jfif
+image: https://res.cloudinary.com/knight-times-news/image/upload/v1675892406/destiny.jfif-2_gh5gnl.jpg
 imageAlt: Logo
 ---
 

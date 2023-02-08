@@ -10,7 +10,7 @@ authors: ""
 publishDate: "2022-02-14"
 tags:
   - post
-image: https://d33wubrfki0l68.cloudfront.net/b0d3de396f39e75c0184d22d360bd52086f555c7/2b1f9/assets/blog/dsc_0683.jfif
+image: https://res.cloudinary.com/knight-times-news/image/upload/v1675892448/dsc_0683.jfif_jgn7ye.jpg
 ---
 
 <!--StartFragment-->
