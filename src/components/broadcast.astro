@@ -47,6 +47,43 @@ const LastVideoImage = data.items[1].snippet.thumbnails.maxres.url;
       }
     }
   }
+
+  @media (max-width: 1000px) {
+    .youtubeCard {
+      flex-direction: column;
+      .left {
+        width: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .right {
+        width: 100%;
+        padding-left: 0;
+        h3 {
+          font-size: 1.5em;
+          font-weight: 600;
+          margin-bottom: 0.5em;
+          margin-top: 0.5em;
+          text-align: center;
+        }
+        p {
+          font-size: 1em;
+          font-weight: 400;
+          margin-bottom: 0.5em;
+          margin-top: 0.5em;
+        }
+
+        button {
+          animation: 0.2s ease-in-out;
+          transition: 0.2s ease-in-out;
+          width: 100%;
+        }
+      }
+    }
+  }
 </style>
 
 <div class="youtubeCard bg-slate-200 p-3 rounded-md">
