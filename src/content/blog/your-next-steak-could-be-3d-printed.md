@@ -3,7 +3,7 @@ draft: false
 title: Your Next Steak Could Be 3D Printed
 snippet: Vegan meat is developing further, this article discusses the
   future    of its creation
-author: ""
+author: "Aaron Weiss"
 authors: ""
 publishDate: "2022-11-08"
 tags:
