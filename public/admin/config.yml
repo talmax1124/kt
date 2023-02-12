@@ -1,12 +1,17 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: master # Branch to update (optional; defaults to master)
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
     delete: 'Delete {{collection}} “{{slug}}”'
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
+site_url: https://knighttimesnews.com
+display_url: https://knighttimesnews.com
+logo_url: https://www.osceolaschools.net/cms/lib/FL50000609/Centricity/Domain/858/Logo.png
+show_preview_links: true
+
 
 media_folder: 'public/images/uploads' # Folder where user uploaded files should go
 public_folder: '/images/uploads'
