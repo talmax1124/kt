@@ -1,13 +1,16 @@
 ---
 draft: false
 title: A Podcast?
-snippet: A podcast? What podcast? Yes, a podcast…but just any podcast, its Know the Neo!
+snippet: >-
+  A podcast? What podcast? Yes, a podcast…but just any podcast, its Know the
+  Neo!
 author: Breana S
 publishDate: "2021-03-06"
 tags:
   - post
   - insights
-image: https://res.cloudinary.com/knight-times-news/image/upload/v1675891110/knowtheneologo_gt9khq.jpg
+image: >-
+  https://res.cloudinary.com/knight-times-news/image/upload/v1675891110/knowtheneologo_gt9khq.jpg
 imageAlt: Logo
 ---
 
