@@ -4,10 +4,15 @@ import { defineConfig } from "tinacms";
 const branch =
   process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "master";
 
+const tinaClient =
+  process.env.TINA_CLIENT || "fa9492be-4d1c-45d2-a540-fb1858205bc0";
+const tinaToken =
+  process.env.TINA_TOKEN || "8ed928ed67d1d5cff54debd3bf6e0d4eef2180a3";
+
 export default defineConfig({
   branch,
-  clientId: process.env.TINA_CLIENT, // Get this from tina.io
-  token: process.env.TINA_TOKEN, // Get this from tina.io
+  clientId: tinaClient,
+  token: tinaToken,
   build: {
     outputFolder: "admin",
     publicFolder: "public",
@@ -21,6 +26,11 @@ export default defineConfig({
   schema: {
     collections: [
       {
+        defaultItem: () => {
+          return {
+            draft: false,
+          };
+        },
         name: "blog",
         label: "Posts",
         path: "src/content/blog",
@@ -29,6 +39,7 @@ export default defineConfig({
             type: "boolean",
             name: "draft",
             label: "Draft",
+            default: false,
           },
           {
             type: "string",
