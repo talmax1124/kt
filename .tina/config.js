@@ -6,8 +6,8 @@ const branch =
 
 export default defineConfig({
   branch,
-  clientId: "d0d9e085-b369-4c06-a73e-94fcc1a6b6a6", // Get this from tina.io
-  token: "5cabc3991e4b4d11a4a8f740582c3fad08d7ae8d", // Get this from tina.io
+  clientId: process.env.TINA_CLIENT, // Get this from tina.io
+  token: process.env.TINA_TOKEN, // Get this from tina.io
   build: {
     outputFolder: "admin",
     publicFolder: "public",
@@ -21,16 +21,14 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "post",
+        name: "blog",
         label: "Posts",
         path: "src/content/blog",
         fields: [
           {
-            type: "string",
+            type: "boolean",
             name: "draft",
             label: "Draft",
-            description:
-              "Write true if it is a draft or false if it is not a draft",
           },
           {
             type: "string",
