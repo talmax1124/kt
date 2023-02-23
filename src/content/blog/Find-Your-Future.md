@@ -5,6 +5,7 @@ author: Tiziano Morganti
 publishDate: '2023-02-22T05:00:00.000Z'
 image: 'https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/university.png'
 imageAlt: An image of the University of Florida
+snippet: find your future
 ---
 
 College is one of the biggest concerns for any high schooler, being one of the most stressful things to have in mind. To many, the idea of getting into a college without the assistance of financial help may seem impossible, but with the help of this article, one could dramatically increase their chances of getting recognized.
