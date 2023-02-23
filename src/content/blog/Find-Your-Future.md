@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: Find Your Future
 author: Tiziano Morganti
 publishDate: '2023-02-22T05:00:00.000Z'
@@ -17,9 +17,7 @@ With limited spots for every college, this puts a lot of focus on the choice of 
 
 Taking AP and Honors classes, typically harder classes, are a great way to impress the admissions committee. The AP classes you take also can provide you with the necessary information needed to take more difficult courses when you do arrive at college.
 
-
 AP and Honors Classes...   
-
 
 * Demonstrate you embrace academic challenges.
 * Demonstrate you are ready to take college-level classes
@@ -31,32 +29,14 @@ Along with this, you also get the benefit of earning free college credits in hig
 
 With the assistance of letters of recommendation given by educational figures, colleges are shown a third person view of your abilities, social skills, and character.
 
-
 If you were to ever write a letter of recommendation it should include either a sentence or paragraph of how you know the person you are writing about and the nature of your relationship with this individual, an honest evaluation of the person's characteristics, skills, capabilities, ethics, or accomplishments, preferably with specific examples, and A statement or summary that explains why you would recommend the person you are writing about.
 
-Most colleges also require at least 1 letter of recommendation by a teacher or mentor to confirm the skill and character of the student. 
+Most colleges also require at least 1 letter of recommendation by a teacher or mentor to confirm the skill and character of the student.
 
 #### SAT/ACT Scores
 
 The Scholastic Aptitude Test and the American College Testing exams are two focus exams that colleges look for during the admissions process. The SAT exam is a test administrated by College Board used to provide the student and colleges with a point-based average of the student’s reading and writing ability as well as their math comprehension. The ACT exam is like the SAT in terms of material covered in the test, following the same need of language and math comprehension with the addition of science.
 
-SAT: A College Board administration exam that all students in the 10th, 11th, and 12th grade must take, the exam is in time a total of 3 hours or 3 hours and 50 minutes if an essay portion is added. The exam is divided into either 4 to 5 portions, the reading portion with 52 questions in 65 minutes, the writing and language portion with 44 questions in 35 minutes, the math (no calculator) portion with 20 questions in 25 minutes, and the math (with calculator) portion with 38 questions in 55 minutes. If added, the optional essay portion has 50 minutes in length. 
+SAT: A College Board administration exam that all students in the 10th, 11th, and 12th grade must take, the exam is in time a total of 3 hours or 3 hours and 50 minutes if an essay portion is added. The exam is divided into either 4 to 5 portions, the reading portion with 52 questions in 65 minutes, the writing and language portion with 44 questions in 35 minutes, the math (no calculator) portion with 20 questions in 25 minutes, and the math (with calculator) portion with 38 questions in 55 minutes. If added, the optional essay portion has 50 minutes in length.
 
-
-![SAT Testing Chart](<https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/time sections.png>)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![SAT Testing Chart](<https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/time sections.png> "")
