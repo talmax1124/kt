@@ -40,4 +40,20 @@ A controversial example of inflated prices is the in-game item called the Pachim
 
 ![Pachimari charm](<https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/Pachimari charm.png> "The real-life Pachimari charm from the Gear Shop.")
 
+#### How Other Free-To-Play Game’s systems can help Blizzard fix Overwatch 2’s Monetization System?
 
+Overwatch 2’s monetization system has features similar to other games such as Fortnite and Apex Legends. Blizzard could implement features of other free-to play games with profit-inducing monetization systems with their own additions to make it work with Overwatch 2. For example, Blizzard could implement a feature of Apex Legends, which allows easy access to free currency by just leveling up, the currency, ‘crafting materials’ can be used to buy cosmetics. Another example is Fortnite’s challenge system and battle pass, which allows players to attempt challenges and level up through the battle pass. 
+
+#### &#xA;Conclusion: How can Blizzard fix the Overwatch 2 Monetization System
+
+How to Fix the Battle Pass
+
+The battle
+pass’s level progression is extremely slow, if you do not have the battle pass bought
+then there is almost no reason to progress as you get the occasional free
+cosmetic; playing to level up has no merit to it as there is no end goal to get
+to. The leveling-up system needs to be changed to fix the battle pass; there
+should be more free cosmetics, more of a reason to play the game if there are
+rewards that players would want to play for. Fortnite’s challenge system and
+battle pass elements could be implemented in which players attempt challenges and level up through the battle
+pass.
