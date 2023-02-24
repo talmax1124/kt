@@ -48,12 +48,13 @@ Overwatch 2’s monetization system has features similar to other games such as 
 
 How to Fix the Battle Pass
 
-The battle
-pass’s level progression is extremely slow, if you do not have the battle pass bought
-then there is almost no reason to progress as you get the occasional free
-cosmetic; playing to level up has no merit to it as there is no end goal to get
-to. The leveling-up system needs to be changed to fix the battle pass; there
-should be more free cosmetics, more of a reason to play the game if there are
-rewards that players would want to play for. Fortnite’s challenge system and
-battle pass elements could be implemented in which players attempt challenges and level up through the battle
-pass.
+The battle pass’s level progression is extremely slow, if you do not have the battle pass bought then there is almost no reason to progress as you get the occasional free cosmetic; playing to level up has no merit to it as there is no end goal to get to. The leveling-up system needs to be changed to fix the battle pass; there should be more free cosmetics and more of a reason to play the game if there are rewards that players would want to play for. Fortnite’s challenge system and battle pass elements could be implemented in which players attempt challenges and level up through the battle pass.
+
+
+How to
+Fix the Cosmetic Costs 
+
+The free currency you gain each week by doing challenges is not enough; for a measly 60 cents a week, there is no practical way to buy any cosmetics for free by just playing. Blizzard could implement a feature of Apex Legends, which allows easy access to free currency by just leveling up, the currency, ‘crafting materials’ can be used to buy cosmetics. The value of Overwatch coins and ‘’Crafting Materials is 60 cents, however in Apex Legends leveling up is a lot faster, and so you can buy many cosmetics for free, there is also ‘’Crafting materials’ in the game’s battle pass. In Overwatch 2 it would take 5 years of playing to earn the free currency to buy just one legendary skin. Overwatch coins need to be worth more or there must be more ways to earn Overwatch coins. There is no real progression, except for the battle pass. To fix the cosmetic costs they need to be decreased to a point where it is fair to players and profit-inducing for Blizzard. More players would buy cosmetics if they were cheaper. 
+
+
+It is recommended to not buy any cosmetics or the battle pass, if you agree that the monetization system needs to be changed. If enough players choose not to spend money on the game, Blizzard will be forced to make a change to the system to encourage players to spend money. If you want to support Overwatch 2, you need to not support it.
