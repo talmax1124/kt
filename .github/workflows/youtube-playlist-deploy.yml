@@ -1,0 +1,49 @@
+name: Check for new YouTube video
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+
+env:
+  PLAYLIST_ID: PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww
+  URL: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${{ env.PLAYLIST_ID }}&key=AIzaSyDVxhfgWbHcodLfRKNQSosC2ppjbwMGxAEq"
+
+jobs:
+  check-for-new-video:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for new video
+        run: |
+          video_id=$(curl -sS "${{ env.URL }}" | jq -r '.items[0].snippet.resourceId.videoId')
+          if [ -n "${video_id}" ]; then
+            echo "New video found: ${video_id}"
+            exit 0
+          else
+            echo "No new videos found"
+            exit 1
+          fi
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: check-for-new-video
+    if: ${{ needs.check-for-new-video.result == 'success' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2.4.2
+        with:
+          node-version: 14.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build application
+        run: npm run build
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update application after new video"
+          commit_author: "GitHub Actions "
