@@ -6,7 +6,7 @@ on:
 
 env:
   PLAYLIST_ID: PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww
-  URL: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${{ env.PLAYLIST_ID }}&key=AIzaSyDVxhfgWbHcodLfRKNQSosC2ppjbwMGxAEq"
+  URL: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww&key=AIzaSyDVxhfgWbHcodLfRKNQSosC2ppjbwMGxAEq"
 
 jobs:
   check-for-new-video:
