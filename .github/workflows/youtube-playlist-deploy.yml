@@ -29,13 +29,12 @@ jobs:
     if: ${{ needs.check-for-new-video.result == 'success' }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3.6.0
+        uses: actions/checkout@v3
 
       - name: Install Node.js
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: npm
 
       - name: Install dependencies
         run: pnpm install
