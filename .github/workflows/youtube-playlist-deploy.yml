@@ -15,6 +15,9 @@ jobs:
       - name: Check for new video
         run: |
           # Read the previous playlist length from file
+          # Create the playlist_length.txt file if it doesn't exist
+          touch playlistLength.txt
+          
           PREV_LENGTH=$(cat playlistLength.txt)
 
           # Get the current length of the playlist
