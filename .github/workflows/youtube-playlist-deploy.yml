@@ -47,6 +47,8 @@ jobs:
         with:
           commit_message: "Update YouTube playlist"
           commit_options: "--no-verify"
-          commit_user_name: "talmax1124"
+          commit_user_name: "talmax1124 <carlitosdiazplaza@gmail.com>"
           commit_user_email: "carlitosdiazplaza@gmail.com"
+          
+         
           
