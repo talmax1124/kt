@@ -45,5 +45,8 @@ jobs:
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Update application after new video"
-          commit_author: "talmax1124"
+          commit_message: "Update YouTube playlist"
+          commit_options: "--no-verify"
+          commit_user_name: "talmax1124"
+          commit_user_email: "carlitosdiazplaza@gmail.com"
+          
