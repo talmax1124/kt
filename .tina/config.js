@@ -53,6 +53,7 @@ export default defineConfig({
             name: "snippet",
             label: "Snippet",
             description: "A short summary of the post",
+            required: false,
           },
           {
             type: "string",
