@@ -20,6 +20,8 @@ jobs:
             exit 0
           else
             echo "No new videos found"
+            git commit --allow-empty -m "Update YouTube playlist (no new video)" --no-verify
+            push
             exit 1
           fi
 
