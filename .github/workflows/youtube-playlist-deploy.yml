@@ -37,7 +37,7 @@ jobs:
           node-version: 16.x
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build application
         run: npm run build
