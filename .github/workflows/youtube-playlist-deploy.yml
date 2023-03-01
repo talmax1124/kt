@@ -15,7 +15,7 @@ jobs:
       - name: Check for new video
         run: |
           # Read the previous playlist length from file
-          PREV_LENGTH=$(cat playlist_length.txt)
+          PREV_LENGTH=$(cat playlistLength.txt)
 
           # Get the current length of the playlist
           CURRENT_LENGTH=$(curl -sS "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=1&playlistId=PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww&key=AIzaSyDVO0WNKGmLr7XH6UjXXOFZIEmfwhZhe8c" | jq '.pageInfo.totalResults')
