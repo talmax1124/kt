@@ -1,0 +1,80 @@
+name: Check for new YouTube video
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'
+
+env:
+  PLAYLIST_ID: PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww
+  URL: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww&key=AIzaSyDVO0WNKGmLr7XH6UjXXOFZIEmfwhZhe8c"
+
+jobs:
+  check-for-new-video:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for new video
+        run: |
+          # Read the previous playlist length from file
+          # Create the playlist_length.txt file if it doesn't exist
+          touch playlistLength.txt
+
+          PREV_LENGTH=$(cat playlistLength.txt)
+
+          # Get the current length of the playlist
+          CURRENT_LENGTH=$(curl -sS "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=1&playlistId=PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww&key=AIzaSyDVO0WNKGmLr7XH6UjXXOFZIEmfwhZhe8c" | jq '.pageInfo.totalResults')
+
+          # Check if the current length is greater than the previous length
+          if [ "$CURRENT_LENGTH" -gt "$PREV_LENGTH" ]; then
+            # Save the current length to file
+            echo "$CURRENT_LENGTH" > playlistLength.txt
+
+            # Get the video ID of the latest video
+            VIDEO_ID=$(curl -sS "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=1&playlistId=PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww&key=AIzaSyDVO0WNKGmLr7XH6UjXXOFZIEmfwhZhe8c" | jq -r '.items[0].snippet.resourceId.videoId')
+
+            # Create a new markdown file with the video details
+            echo "New video added: https://www.youtube.com/watch?v=$VIDEO_ID" > new_video.md
+
+            # Commit the changes
+            git config user.name "talmax1124"
+            git config user.email "carlitosdiazplaza@gmail.com"
+            git add .
+            git commit -m "Update YouTube playlist"
+            git push
+          else
+            # Save the current length to file
+            echo "$CURRENT_LENGTH" > playlistLength.txt
+
+            # Create an empty commit
+            git commit --allow-empty -m "No new videos added"
+            git push
+          fi
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: check-for-new-video
+    if: ${{ needs.check-for-new-video.result == 'success' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build application
+        run: npm run build
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update YouTube playlist"
+          commit_options: "--no-verify"
+          commit_user_name: "talmax1124 <carlitosdiazplaza@gmail.com>"
+          commit_user_email: "carlitosdiazplaza@gmail.com"
+          
+         
+          
