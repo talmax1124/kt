@@ -2,7 +2,6 @@ name: Check for new YouTube video
 
 on:
   schedule:
-    # Run every 1 minute
     - cron: "*/1 * * * *"
 
 env:
@@ -12,6 +11,42 @@ env:
 jobs:
   check-for-new-video:
     runs-on: ubuntu-latest
+    steps:
+      - name: Check for new video
+
+        run: |
+          # Get the ID of the latest video in the playlist
+          video_id=$(curl -sS "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww&key=AIzaSyDVO0WNKGmLr7XH6UjXXOFZIEmfwhZhe8c" | jq -r '.items[0].snippet.resourceId.videoId')
+          echo "New video found: $video_id"
+          if [ -z "$video_id" ]; then
+            echo "No new videos found"
+            exit 0
+          fi
+
+          # Get the length of the playlist
+          playlist_length=$(curl -sS "https://www.googleapis.com/youtube/v3/playlists?part=contentDetails&id=PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww&key=AIzaSyDVO0WNKGmLr7XH6UjXXOFZIEmfwhZhe8c" | jq -r '.items[].contentDetails.itemCount')
+          echo "Playlist length: $playlist_length"
+
+          # Check if the video ID is already in the file
+          if grep -q "$video_id" videoId.txt; then
+            echo "Video already exists in file"
+            exit 0
+          fi
+
+          # Add the new video ID to the file
+          echo "$video_id" >> videoId.txt
+          echo "Updated videoId.txt with new video ID"
+
+          # Update the playlist length
+          echo "$playlist_length" > playlistLength.txt
+          echo "Updated playlistLength.txt with new playlist length"
+
+          # Commit the changes
+          git config --global user.email "carlitosdiazplaza@gmail.com"
+          git config --global user.name "talmax1124"
+          git add .
+          git commit -m "Update YouTube playlist"
+          git push
 
   build-and-deploy:
     runs-on: ubuntu-latest
