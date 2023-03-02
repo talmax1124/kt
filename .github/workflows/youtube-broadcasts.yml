@@ -1,0 +1,61 @@
+name: Check for new YouTube Broadcasts
+
+on:
+  schedule:
+    - cron: "0 0 */3 * *"
+
+env:
+  PLAYLIST_ID: PLWoJ8lk-542jI-wk94JocX9pvGWIJ8tnt
+  URL: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLWoJ8lk-542jI-wk94JocX9pvGWIJ8tnt&key=AIzaSyDVO0WNKGmLr7XH6UjXXOFZIEmfwhZhe8c"
+
+jobs:
+  checkPlaylist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check for new video
+        run: |
+          video_id=$(curl -sS "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLWoJ8lk-542jI-wk94JocX9pvGWIJ8tnt&key=AIzaSyDVO0WNKGmLr7XH6UjXXOFZIEmfwhZhe8c" | jq -r '.items[0].snippet.resourceId.videoId')
+          echo "New video found: $video_id"
+          if [ -z "$video_id" ]; then
+            echo "No new videos found"
+            exit 0
+          fi
+
+          echo "$video_id" > videoId.txt
+          echo "Updated videoId.txt with new video ID"
+
+          old_playlist_length=$(cat playlistLength.txt)
+          new_playlist_length=$(curl -sS "https://www.googleapis.com/youtube/v3/playlists?part=contentDetails&id=PLWoJ8lk-542jI-wk94JocX9pvGWIJ8tnt&key=AIzaSyDVO0WNKGmLr7XH6UjXXOFZIEmfwhZhe8c" | jq -r '.items[].contentDetails.itemCount')
+          echo "Old playlist length: $old_playlist_length"
+          echo "New playlist length: $new_playlist_length"
+
+          if [ "$new_playlist_length" -gt "$old_playlist_length" ]; then
+            echo "New videos found!"
+            echo "$new_playlist_length" > playlistLength.txt
+            git config --global user.email "carlitosdiazplaza@gmail.com"
+            git config --global user.name "talmax1124"
+            git add .
+            git commit -m "Update YouTube playlist for $video_id"
+            git push
+          else
+            echo "No new videos found"
+            # Create a commit even if no new videos are found
+            # This is to prevent the workflow from failing
+            git config --global user.email "carlitosdiazplaza@gmail.com"
+            git config --global user.name "talmax1124"
+            git add .
+            git commit -m "No new videos found"
+            git push
+
+          fi
