@@ -2,7 +2,8 @@ name: Check for new YouTube video
 
 on:
   schedule:
-    - cron: "*/1 * * * *"
+  # Run every .30 seconds
+  - cron: "* * * * *"
 
 env:
   PLAYLIST_ID: PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww
