@@ -2,8 +2,7 @@ name: Check for new YouTube video
 
 on:
   schedule:
-  # Run every .30 seconds
-  - cron: "* * * * *"
+    - cron: "*/1 * * * *"
 
 env:
   PLAYLIST_ID: PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww
@@ -18,16 +17,20 @@ jobs:
           video_id=$(curl -sS "${{ env.URL }}" | jq -r '.items[0].snippet.resourceId.videoId')
           if [ -n "${video_id}" ]; then
             echo "New video found: ${video_id}"
-            echo "${video_id}" > videoId.txt
-            echo "Updated videoId.txt with new video ID"
+            git config --global user.name "talmax1124"
+            git commit --allow-empty -m "Update YouTube playlist" --no-verify
+            git tag -a "${video_id}" -m "Update YouTube playlist"
+            git push -f origin HEAD:main || true
+            git push
             exit 0
           else
             echo "No new videos found"
             git commit --allow-empty -m "Update YouTube playlist (no new video)" --no-verify
+            git tag -a "no-new-video" -m "Update YouTube playlist (no new video)"
+            git push -f origin HEAD:main || true
             git push
             exit 1
           fi
-
   build-and-deploy:
     runs-on: ubuntu-latest
     needs: check-for-new-video
@@ -43,39 +46,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Check for new video
-        run: |
-          video_id=$(curl -sS "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww&key=AIzaSyDVO0WNKGmLr7XH6UjXXOFZIEmfwhZhe8c" | jq -r '.items[0].snippet.resourceId.videoId')
-          echo "New video found: $video_id"
-          if [ -z "$video_id" ]; then
-            echo "No new videos found"
-            exit 0
-          fi
-
-          echo "$video_id" > videoId.txt
-          echo "Updated videoId.txt with new video ID"
-
-          old_playlist_length=$(cat playlistLength.txt)
-          new_playlist_length=$(curl -sS "https://www.googleapis.com/youtube/v3/playlists?part=contentDetails&id=PLWoJ8lk-542hD-c1i9fK3Lbje9Ky-P6ww&key=AIzaSyDVO0WNKGmLr7XH6UjXXOFZIEmfwhZhe8c" | jq -r '.items[].contentDetails.itemCount')
-          echo "Old playlist length: $old_playlist_length"
-          echo "New playlist length: $new_playlist_length"
-
-          if [ "$new_playlist_length" -gt "$old_playlist_length" ]; then
-            echo "New videos found!"
-            echo "$new_playlist_length" > playlistLength.txt
-            git config --global user.email "carlitosdiazplaza@gmail.com"
-            git config --global user.name "talmax1124"
-            git add .
-            git commit -m "Update YouTube playlist"
-            git push
-          else
-            echo "No new videos found"
-            git config --global user.email "carlitosdiazplaza@gmail.com"
-            git config --global user.name "talmax1124"
-            git commit --allow-empty -m "No new videos added"
-            git push
-          fi
 
       - name: Build application
         run: npm run build
