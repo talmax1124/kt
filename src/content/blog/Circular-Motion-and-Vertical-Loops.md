@@ -1,20 +1,19 @@
 ---
-draft: false
+draft: true
 title: Circular Motion and Vertical Loops
 ---
 
 #### **An Introduction:**
 
-Unit 3 of the AP Physics 1 curriculum covers circular motion. In this unit, students taking the course are expected to learn and understand the characteristics of an object moving in a circular path. This article is a surface-level introduction to the topic, focusing only on the vertical path of circular motion. 
-
+Unit 3 of the AP Physics 1 curriculum covers circular motion. In this unit, students taking the course are expected to learn and understand the characteristics of an object moving in a circular path. This article is a surface-level introduction to the topic, focusing only on the vertical path of circular motion.
 
 #### Centripetal Force
 
-The centripetal force (Fc) is the force that acts on an object moving in a circular path and is always directed towards the path’s center. The magnitude of this force is dependent on the object’s mass, velocity, and the radius of the path traveled. Centripetal force is required to keep objects moving in a circular path due to its relationship with inertia. As stated in Newton’s First Law of Motion, an object in motion will continue its course of motion, unless acted upon by an outside force. Centripetal force does just that by overcoming the object’s linear path, pulling it inwards and creating a circle. 
+The centripetal force (Fc) is the force that acts on an object moving in a circular path and is always directed towards the path’s center. The magnitude of this force is dependent on the object’s mass, velocity, and the radius of the path traveled. Centripetal force is required to keep objects moving in a circular path due to its relationship with inertia. As stated in Newton’s First Law of Motion, an object in motion will continue its course of motion, unless acted upon by an outside force. Centripetal force does just that by overcoming the object’s linear path, pulling it inwards and creating a circle.
 
 #### The Equation
 
-Newton’s second law of motion, F = ma, is a universal equation that is the blueprint for solving almost every physics problem. F represents the force, m represents the mass, and a represents the acceleration. In the context of circular motion, this equation gets turned into, with Fc representing centripetal force, v representing the velocity of the object, and r representing the radius of the object’s circular path. In relation to the whole formula, the centripetal force is proportional to the mass of its squared velocity; as one increases in magnitude, the others do as well. This is due to mass and velocity being numerators of the equation instead of denominators, like the radius. The radius is a denominator, which causes its relationship with the centripetal force to be inversely proportional. As one increases, the other decreases, and vice versa. 
+Newton’s second law of motion, F = ma, is a universal equation that is the blueprint for solving almost every physics problem. F represents the force, m represents the mass, and a represents the acceleration. In the context of circular motion, this equation gets turned into, with Fc representing centripetal force, v representing the velocity of the object, and r representing the radius of the object’s circular path. In relation to the whole formula, the centripetal force is proportional to the mass of its squared velocity; as one increases in magnitude, the others do as well. This is due to mass and velocity being numerators of the equation instead of denominators, like the radius. The radius is a denominator, which causes its relationship with the centripetal force to be inversely proportional. As one increases, the other decreases, and vice versa.
 
 #### Free Body Diagram
 
