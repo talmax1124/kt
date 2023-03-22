@@ -2,7 +2,7 @@ name: Check for new YouTube Broadcasts
 
 on:
   schedule:
-    - cron: "0 0 */3 * *"
+    - cron: "0 0 */5 * *"
 
 env:
   PLAYLIST_ID: PLWoJ8lk-542jI-wk94JocX9pvGWIJ8tnt
