@@ -1,6 +1,9 @@
 ---
 draft: true
 title: Circular Motion and Vertical Loops
+snippet: Learn about Circular Motion & Vertical Loops
+author: No Author Available
+publishDate: '2023-03-18T04:00:00.000Z'
 ---
 
 #### **An Introduction:**
