@@ -28,6 +28,7 @@ export default defineConfig({
         defaultItem: () => {
           return {
             draft: false,
+            tags: ["post"],
           };
         },
         name: "blog",

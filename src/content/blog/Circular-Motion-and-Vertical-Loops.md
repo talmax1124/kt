@@ -5,10 +5,12 @@ snippet: >-
   This article discusses circular motion, how it works, and how it applies to
   things we see in real life!
 author: Christopher Andris
-publishDate: '2023-03-24T04:00:00.000Z'
+publishDate: "2023-03-22T04:00:00.000Z"
 image: >-
   https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/rollercoaster
   thumbnail.jpg
+tags:
+  - Circular Motion
 ---
 
 #### An Introduction
@@ -37,9 +39,9 @@ T represents the tension force that pulls the object to the center, and mg is th
 Conversely, if the object was at the bottom of its circular path, the tension force would still act towards the
 center, while the force due to gravity would point away from it, making the force negative. This is because gravity always pulls down on an object. The FBD of this situation would look like this:
 
- 
 
-![A free body diagram, with one arrow pointing up labelled T, one pointing down labelled mg, and one pointing right labelled v](https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/fb2.png "")
+
+![A free body diagram, with one arrow pointing up labelled T, one pointing down labelled mg, and one pointing right labelled v](https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/fb2.png)
 
 The tension and gravitational forces are equal in magnitude (indicated by the arrow lengths) because the object hasn’t broken away from its circular path. Essentially, the string creates an equal and opposite tension force in reaction to gravity, keeping the object in circular motion.
 
@@ -49,15 +51,15 @@ The FBDs provided can be translated in other areas of life as well. Case in poin
 
 First, the car enters the loop, experiencing the centripetal force that keeps it in a circular path. As the car approaches the top of the loop, it begins to slow down due to the gravitational force that acts on it.
 
-![A free body diagram, with one arrow pointing left labelled FN, one pointing up labelled v, and one pointing down labelled mg](https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/fb3.png "")
+![A free body diagram, with one arrow pointing left labelled FN, one pointing up labelled v, and one pointing down labelled mg](https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/fb3.png)
 
 Then, at the top of the loop, there is a temporary feeling of weightlessness that all riders experience. At this point, the car is moving at such a speed that a centripetal force greater than the force due to gravity is created, causing the car to accelerate upwards. Despite the normal force (FN)(1) and gravitational force pointing in the same direction, the car does not fall. The only way for the car to fall would be if it lost speed.
 
-![ A free body diagram, with an arrow pointing left labeled v, and two pointing down, shorter one labelled FN and longer one mg.](https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/fb4.png "")
+![ A free body diagram, with an arrow pointing left labeled v, and two pointing down, shorter one labelled FN and longer one mg.](https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/fb4.png)
 
 After this, the car proceeds through the rest of the loop. The car accelerates downwards, adding to the downwards force of gravity and consequently makes the riders feel heavier once they’ve reached the bottom of the loop.
 
-![ A free body diagram, with an arrow pointing up labeled FN, one pointing down labelled mg, and one pointing right labelled v](https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/fb5.png "")
+![ A free body diagram, with an arrow pointing up labeled FN, one pointing down labelled mg, and one pointing right labelled v](https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/fb5.png)
 
 #### Conclusion
 
