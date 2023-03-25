@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: Circular Motion and Vertical Loops
 snippet: >-
   This article discusses circular motion, how it works, and how it applies to
