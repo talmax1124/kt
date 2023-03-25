@@ -1,6 +1,6 @@
 ---
 draft: true
-title: Find Your Future
+title: Find Your Future (drafted)
 author: Tiziano Morganti
 publishDate: '2023-02-22T05:00:00.000Z'
 image: 'https://assets.tina.io/fa9492be-4d1c-45d2-a540-fb1858205bc0/university.png'
