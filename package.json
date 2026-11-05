@@ -29,6 +29,13 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.8",
     "@types/node": "^18.13.0",
-    "sharp": "^0.31.3"
+    "sharp": "^0.35.5"
+  },
+  "pnpm": {
+    "overrides": {
+      "source-map-js": "^1.2.2",
+      "brace-expansion@1": "^1.1.21",
+      "brace-expansion@2": "^2.1.7"
+    }
   }
 }
